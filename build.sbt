@@ -5,9 +5,9 @@ scalaVersion := "2.12.12"
 lazy val common = project.in(file("common"))
     .settings(
         libraryDependencies ++= Seq(
-            "org.json4s" %% "json4s-native" % "{latestVersion}", 
+            "org.json4s" %% "json4s-native" % "4.1.0", 
             "com.eltimn" %% "sbt-slf4j" % "1.0.4",
-            "com.typesafe" % "config" % "1.4.2",
+            "com.typesafe" %% "config" % "1.4.2",
             "org.scalatest" %% "scalatest" % "3.2.11" % "test",
             "org.mockito" %% "mockito-scala_2.11" % "1.13.6" % "test"
         )
@@ -17,8 +17,8 @@ lazy val persistence = project.in(file("persistence"))
     .settings(
         libraryDependencies ++= Seq(
             "com.typesafe.slick" %% "slick" % "3.0.0",
-            "org.postgresql" % "postgresql" % "42.3.4",
-            libraryDependencies += "com.h2database" % "h2" % "1.4.192" % "test"
+            "org.postgresql" %% "postgresql" % "42.3.4",
+            "com.h2database" %% "h2" % "1.4.192" % "test"
         )
     )
     .dependsOn(common)
